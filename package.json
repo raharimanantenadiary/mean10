@@ -1,0 +1,9 @@
+{
+	"name": "mean10",
+	"version": "1.0.0",
+	"scripts": {
+		"build": "cd server && npm install cd ../front && npm install && npm run build",
+		"start": "node server/server.js",
+		"test": "echo \"Erro: no test specified\" && exit 1",
+	} 
+}
