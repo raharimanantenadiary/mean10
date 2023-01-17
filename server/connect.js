@@ -1,0 +1,18 @@
+const mongoose = require('mongoose');
+require('dotenv').config();
+
+// Connexion à la base de données
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+
+// Gestion des erreurs de connexion
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'connection error:'));
+db.once('open', function() {
+  console.log('Connected to MongoDB');
+});
+
+
+module.exports = mongoose;
