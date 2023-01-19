@@ -3,7 +3,9 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './authentification/login/login.component';
@@ -13,6 +15,7 @@ import { TemplateComponent } from './composant/template/template.component';
 import { HeaderComponent } from './composant/header/header.component';
 import { NavbarComponent } from './composant/navbar/navbar.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 @NgModule({
   declarations: [
@@ -27,8 +30,12 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     DragDropModule,
+    FormsModule,
+    ReactiveFormsModule,
+    ModalModule.forRoot(),
     NgCircleProgressModule.forRoot({radius : 100,outerStrokeWidth: 16,innerStrokeWidth: 8,outerStrokeColor: "#78C000",
     innerStrokeColor: "#C7E596",animationDuration: 300}),
     RouterModule.forRoot([
